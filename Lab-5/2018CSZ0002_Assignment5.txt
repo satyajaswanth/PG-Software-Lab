@@ -1,0 +1,23 @@
+Question 1:
+
+1. ls  -al /usr/include/ |wc -l
+2. ls -lS /usr/include/ |head -n 6
+3. find /usr/include/ -maxdepth 1 -name '*.h' | wc -l
+4. find /usr/inclde/ -size +100b -name '*.h' | wc -l
+
+
+Question 2:
+
+File Create Commands
+1. touch CaseNew{1..9}.c
+2. touch Case{1..9}.c
+3. touch Case.php CaseM{2..9}.php
+4. touch N{1..9}.php
+
+1. find . -type f -name 'CaseNew*' -exec  cp '{}'   /home/jaswanth/Desktop/New/ \;
+2. find . -type f -name 'Case[1-9]*' -exec cp '{}'  /home/jaswanth/Desktop/old/ \;
+3.  find . -type f -name '*.php' -exec cp '{}'  /home/jaswanth/Desktop/PhpFiles/ \;
+4.  sudo find . -name 'CaseNew*' -type f -exec grep -H 'cat' {} \;
+      or
+      sudo find -name "CaseNew*" | xargs grep "cat"
+5. sudo find . -name 'CaseNew*' -type f -exec grep -H 'cat' {} \; >1.txt
